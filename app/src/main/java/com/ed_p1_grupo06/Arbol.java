@@ -10,4 +10,18 @@ public class Arbol {
     public Nodo getRaiz() {
         return raiz;
     }
+
+    public void construirArbol(Tablero tablero, Ficha.TipoFicha jugador) {
+        construirArbolRecursivo(raiz, jugador, true);
+    }
+
+    private void  construirArbolRecursivo(Nodo nodo, Ficha.TipoFicha jugador, boolean turnoComputadora){
+
+    }
+
+    public static Tablero obtenerMejorMovimiento(Tablero tablero, Ficha.TipoFicha ia){
+        Arbol arbol = new Arbol(tablero.copiar());
+        arbol.construirArbol(tablero, ia);
+        return tablero;
+    }
 }
