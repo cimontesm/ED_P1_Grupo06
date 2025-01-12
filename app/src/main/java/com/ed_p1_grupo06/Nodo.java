@@ -3,25 +3,25 @@ package com.ed_p1_grupo06;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Nodo {
-    private Tablero estado;
-    private List<Nodo> hijos;
+public class Nodo<T> {
+    private T estado;
+    private List<Nodo<T>> hijos;
     private int utilidad;
 
-    public Nodo(Tablero estado) {
+    public Nodo(T estado) {
         this.estado = estado;
         this.hijos = new ArrayList<>();
     }
 
-    public Tablero getEstado() {
+    public T getEstado() {
         return estado;
     }
 
-    public void agregarHijo(Nodo hijo) {
+    public void agregarHijo(Nodo<T> hijo) {
         hijos.add(hijo);
     }
 
-    public List<Nodo> getHijos() {
+    public List<Nodo<T>> getHijos() {
         return hijos;
     }
 

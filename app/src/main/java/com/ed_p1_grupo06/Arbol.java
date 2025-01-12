@@ -1,27 +1,31 @@
 package com.ed_p1_grupo06;
 
-public class Arbol {
-    private Nodo raiz;
+public class Arbol<T> {
+    private Nodo<T> raiz;
 
-    public Arbol(Tablero estadoInicial) {
-        this.raiz = new Nodo(estadoInicial);
+    public Arbol(T estadoInicial) {
+        this.raiz = new Nodo<>(estadoInicial);
     }
 
-    public Nodo getRaiz() {
+    public Nodo<T> getRaiz() {
         return raiz;
     }
 
-    public void construirArbol(Tablero tablero, Ficha.TipoFicha jugador) {
-        construirArbolRecursivo(raiz, jugador, true);
+    public void construirArbol(T estado, Tablero tablero, Ficha.TipoFicha jugador) {
+        construirArbolRecursivo(raiz, jugador, true, tablero);
     }
 
-    private void  construirArbolRecursivo(Nodo nodo, Ficha.TipoFicha jugador, boolean turnoComputadora){
-
+    private void  construirArbolRecursivo(Nodo<T> nodo, Ficha.TipoFicha jugador, boolean turnoComputadora, Tablero tablero){
+        T estadoActual = nodo.getEstado();
+        Tablero estadoTablero = (Tablero) estadoActual;
     }
 
-    public static Tablero obtenerMejorMovimiento(Tablero tablero, Ficha.TipoFicha ia){
-        Arbol arbol = new Arbol(tablero.copiar());
-        arbol.construirArbol(tablero, ia);
+    public Tablero obtenerMejorMovimiento(Tablero tablero, Ficha.TipoFicha ia){
+        construirArbol((T) tablero, tablero, ia);
+
+        Nodo<T> raiz = getRaiz();
+        Nodo<T> mejorHijo = null;
+
         return tablero;
     }
 }
