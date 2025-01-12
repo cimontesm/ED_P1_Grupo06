@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EBB8FA"
+    android:background="@drawable/fondo"
+    android:keepScreenOn="false"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -23,10 +24,10 @@
         app:layout_constraintGuide_begin="468dp" />
 
     <Button
-        android:id="@+id/ID_button"
+        android:id="@+id/ButtonJugar"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="97dp"
-        android:layout_height="50dp"
+        android:layout_width="126dp"
+        android:layout_height="54dp"
         android:background="#2F504F"
         android:backgroundTint="#2A0A0A"
         android:text="Jugar"
@@ -37,15 +38,33 @@
         app:rippleColor="#9D1313" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/ButtonSalir"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="98dp"
-        android:layout_height="56dp"
-        android:background="@color/black"
-        android:backgroundTint="#A81B1B"
+        android:layout_width="126dp"
+        android:layout_height="54dp"
+        android:background="#2F504F"
+        android:backgroundTint="#2A0A0A"
         android:text="Salir"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.263"
+        app:rippleColor="#9D1313" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="190dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="80dp"
+        android:text="Bienvenido "
+        android:textColor="#FEFDFDFD"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
