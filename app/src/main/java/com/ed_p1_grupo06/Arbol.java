@@ -22,6 +22,7 @@ public class Arbol<T> {
         T estadoActual = nodo.getEstado();
         Tablero estadoTablero = (Tablero) estadoActual;
 
+        // Verificar si hay un ganador o si el tablero está lleno
         if (estadoTablero.estaLleno() || estadoTablero.verificarGanador(Ficha.TipoFicha.CRUZ) || estadoTablero.verificarGanador(Ficha.TipoFicha.CIRCULO)) {
             nodo.setUtilidad(estadoTablero.calcularUtilidad(jugador));
             return;
@@ -38,6 +39,33 @@ public class Arbol<T> {
             }
         }
 
+        // Verificar si hay un movimiento ganador para la computadora
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                Tablero copia = estadoTablero.copiar();
+                if (copia.colocarFicha(i, j, jugador)) {
+                    if (copia.verificarGanador(jugador)) {
+                        nodo.setUtilidad(Integer.MAX_VALUE); // Movimiento ganador
+                        return;
+                    }
+                }
+            }
+        }
+
+        // Verificar si hay un movimiento ganador para el oponente
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                Tablero copia = estadoTablero.copiar();
+                if (copia.colocarFicha(i, j, siguienteJugador)) {
+                    if (copia.verificarGanador(siguienteJugador)) {
+                        nodo.setUtilidad(Integer.MIN_VALUE); // Bloquear movimiento ganador del oponente
+                        return;
+                    }
+                }
+            }
+        }
+
+        // Generar nodos hijos y continuar con el minimax
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 Tablero copia = estadoTablero.copiar();
@@ -49,12 +77,8 @@ public class Arbol<T> {
             }
         }
 
-        int mejorUtilidad;
-        if (turnoComputadora) {
-            mejorUtilidad = Integer.MIN_VALUE;
-        } else {
-            mejorUtilidad = Integer.MAX_VALUE;
-        }
+        // Evaluar la mejor utilidad
+        int mejorUtilidad = turnoComputadora ? Integer.MIN_VALUE : Integer.MAX_VALUE;
 
         for (Nodo<T> hijo : nodo.getHijos()) {
             if (turnoComputadora) {
@@ -73,12 +97,7 @@ public class Arbol<T> {
         Nodo<T> mejorHijo = null;
         int mejorUtilidad = Integer.MIN_VALUE;
 
-        //esto era para ver por consola
-        //System.out.println("Evaluando movimientos posibles:");
-        //System.out.println("Utilidad > 0: Ventaja para la IA, < 0: Ventaja para el jugador, 0: Empate.");
-
         for (Nodo<T> hijo : raiz.getHijos()) {
-           // System.out.println("Movimiento con utilidad: " + hijo.getUtilidad());
             if (hijo.getUtilidad() > mejorUtilidad) {
                 mejorUtilidad = hijo.getUtilidad();
                 mejorHijo = hijo;
