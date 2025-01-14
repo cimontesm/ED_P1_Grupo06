@@ -84,6 +84,5 @@ Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSel
 
     private void cargarSalajugvsbot(){
         setContentView(R.layout.salajugvsbot);
-
     }
 }
