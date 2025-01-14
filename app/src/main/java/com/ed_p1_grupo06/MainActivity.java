@@ -50,7 +50,7 @@ Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSel
         volver.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.cafe_oscuro));
 
         jugvsbot.setOnClickListener(s -> cargarMenuEscogerJugVsBot());
-        jugvsjug.setOnClickListener(s -> setContentView(R.layout.menu_escogerjugvsjug));
+        jugvsjug.setOnClickListener(s -> cargarMenuEscogerJugvsJug());
         botvsbot.setOnClickListener(s -> setContentView(R.layout.menu_escogerbotvsbot));
         volver.setOnClickListener(s -> cargarMenuPrincipal());
     }
@@ -84,5 +84,17 @@ Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSel
 
     private void cargarSalajugvsbot(){
         setContentView(R.layout.salajugvsbot);
+    }
+
+    private void cargarMenuEscogerJugvsJug(){
+        setContentView(R.layout.menu_escogerjugvsjug);
+        salajugvsjug = (Button) findViewById(R.id.IngresoSala2);
+        regresoSelc2 = (Button) findViewById(R.id.RegresoSeleccion2);
+
+        salajugvsjug.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.cafe));
+        regresoSelc2.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.cafe_oscuro));
+
+        regresoSelc2.setOnClickListener(v -> cargarMenuSeleccion());
+
     }
 }
