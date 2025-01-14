@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver;
+Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSelc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +31,20 @@ Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver;
             jugvsjug = (Button) findViewById(R.id.escenario2);
             botvsbot = (Button) findViewById(R.id.escenario3);
             volver = (Button) findViewById(R.id.escenario4);
+            
             //jugvsbot
             jugvsbot.setOnClickListener(s ->{
                 setContentView(R.layout.menu_escogerjugvsbot);
+                //Ir a sala del juego
+                salajugvsbot = (Button) findViewById(R.id.IngresoSala);
+                salajugvsbot.setOnClickListener(u ->{
+                    setContentView(R.layout.salajugvsbot);
+                });
+                //Regreso al menú de selección
+                regresoSelc = (Button) findViewById(R.id.RegresoSeleccion);
+                regresoSelc.setOnClickListener(u ->{
+                    setContentView(R.layout.menu_seleccion);
+                });
             });
             //jugvsjug
             jugvsjug.setOnClickListener(s ->{
