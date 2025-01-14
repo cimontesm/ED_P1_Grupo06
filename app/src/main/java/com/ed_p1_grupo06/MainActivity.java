@@ -31,7 +31,7 @@ Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSel
             jugvsjug = (Button) findViewById(R.id.escenario2);
             botvsbot = (Button) findViewById(R.id.escenario3);
             volver = (Button) findViewById(R.id.escenario4);
-            
+
             //jugvsbot
             jugvsbot.setOnClickListener(s ->{
                 setContentView(R.layout.menu_escogerjugvsbot);
