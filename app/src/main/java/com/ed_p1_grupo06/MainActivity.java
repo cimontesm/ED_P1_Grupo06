@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -24,6 +25,8 @@ Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSel
         //Seccion menu_principal
         jugar = (Button) findViewById(R.id.ButtonJugar);
         salir = (Button) findViewById(R.id.ButtonSalir);
+        jugar.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.brownish_gray));
+        salir.setBackgroundTintList(ContextCompat.getColorStateList(this,R.color.brownish_gray));
         jugar.setOnClickListener(v ->{
             //Seccion menu_seleccion
             setContentView(R.layout.menu_seleccion);
