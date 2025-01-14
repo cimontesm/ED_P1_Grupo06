@@ -73,7 +73,7 @@
     <Button
         android:id="@+id/escenario4"
         android:layout_width="108dp"
-        android:layout_height="41dp"
+        android:layout_height="48dp"
         android:text="Volver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
