@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSelc, salajugvsjug, regresoSelc2;
+Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSelc, salajugvsjug, regresoSelc2, salabotvsbot, regresoSelec3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +51,7 @@ Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSel
 
         jugvsbot.setOnClickListener(s -> cargarMenuEscogerJugVsBot());
         jugvsjug.setOnClickListener(s -> cargarMenuEscogerJugvsJug());
-        botvsbot.setOnClickListener(s -> setContentView(R.layout.menu_escogerbotvsbot));
+        botvsbot.setOnClickListener(s -> cargarMenuEscogerBotvsBot());
         volver.setOnClickListener(s -> cargarMenuPrincipal());
     }
 
@@ -72,8 +72,8 @@ Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSel
     //Jugador vs Bot
     private void cargarMenuEscogerJugVsBot() {
         setContentView(R.layout.menu_escogerjugvsbot);
-        salajugvsbot = (Button) findViewById(R.id.IngresoSala);
-        regresoSelc = (Button) findViewById(R.id.RegresoSeleccion);
+        salajugvsbot = (Button) findViewById(R.id.IngresoSala3);
+        regresoSelc = (Button) findViewById(R.id.RegresoSeleccion3);
 
         salajugvsbot.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.cafe));
         regresoSelc.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.cafe_oscuro));
@@ -96,5 +96,16 @@ Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSel
 
         regresoSelc2.setOnClickListener(v -> cargarMenuSeleccion());
 
+    }
+
+    private void cargarMenuEscogerBotvsBot(){
+        setContentView(R.layout.menu_escogerbotvsbot);
+        salabotvsbot = (Button) findViewById(R.id.IngresoSala3);
+        regresoSelec3 = (Button) findViewById(R.id.RegresoSeleccion3);
+
+        salabotvsbot.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.cafe));
+        regresoSelec3.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.cafe_oscuro));
+
+        regresoSelec3.setOnClickListener(v -> cargarMenuSeleccion());
     }
 }
