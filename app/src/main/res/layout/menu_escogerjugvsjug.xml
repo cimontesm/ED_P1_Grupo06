@@ -6,23 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/background">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="Escoga una ficha"
-        android:textAlignment="center"
-        android:textColor="@color/cafe_oscuro"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline18"
-        app:layout_constraintEnd_toStartOf="@+id/guideline21"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="@+id/guideline20"
-        app:layout_constraintTop_toTopOf="@+id/guideline19"
-        app:layout_constraintVertical_bias="0.258" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline11"
         android:layout_width="wrap_content"
@@ -50,14 +33,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25171" />
+        app:layout_constraintGuide_percent="0.15" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="621dp" />
+        app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline20"
@@ -75,17 +58,29 @@
         app:layout_constraintGuide_begin="270dp"
         app:layout_constraintGuide_percent="0.75" />
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="Escoga una ficha"
+        android:textAlignment="center"
+        android:textColor="@color/cafe_oscuro"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline18" />
+
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="116dp"
         android:layout_height="119dp"
-        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline17"
         app:layout_constraintEnd_toStartOf="@+id/guideline21"
-        app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="@+id/guideline20"
-        app:layout_constraintTop_toTopOf="@+id/guideline18"
-        app:layout_constraintVertical_bias="0.475"
+        app:layout_constraintTop_toTopOf="@+id/guideline19"
         app:srcCompat="@drawable/circle" />
 
     <ImageView
@@ -101,7 +96,7 @@
         app:srcCompat="@drawable/x" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/IngresoSala2"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:fontFamily="casual"
@@ -115,7 +110,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline12" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/RegresoSeleccion2"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:fontFamily="casual"
