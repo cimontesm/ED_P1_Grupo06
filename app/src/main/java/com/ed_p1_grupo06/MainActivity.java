@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSelc;
+Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSelc, salajugvsjug, regresoSelc2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
