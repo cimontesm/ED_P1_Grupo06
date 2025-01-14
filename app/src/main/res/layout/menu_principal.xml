@@ -57,20 +57,21 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="262dp"
-        android:layout_height="76dp"
+        android:layout_width="310dp"
+        android:layout_height="89dp"
         android:fontFamily="casual"
         android:text="@string/bienvenido_a_tres_en_raya_d"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textColor="#BE000000"
+        android:textColor="@color/cafe_oscuro"
+        android:textSize="34sp"
         android:textStyle="normal|bold"
         app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintVertical_bias="0.706" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

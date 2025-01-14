@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="brownish_gray">#8C7D70</color>
     <color name="blanco">#F2F2F2</color>
+    <color name="cafe">#5B3E31</color>
+    <color name="cafe_oscuro">#3D251E</color>
+    <color name="cafe_claro">#8B6C5C</color>
 </resources>
