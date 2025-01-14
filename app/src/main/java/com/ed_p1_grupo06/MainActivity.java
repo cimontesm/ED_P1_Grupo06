@@ -11,7 +11,8 @@ import androidx.core.view.WindowInsetsCompat;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-
+Button jugar;
+Button salir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +22,15 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        jugar = (Button) findViewById(R.id.ButtonJugar);
+        salir = (Button) findViewById(R.id.ButtonSalir);
+        jugar.setOnClickListener(v ->{
+            setContentView(R.layout.menu_principal);
+        });
+        salir.setOnClickListener(v ->{
+            finishAffinity();
         });
     }
 }
