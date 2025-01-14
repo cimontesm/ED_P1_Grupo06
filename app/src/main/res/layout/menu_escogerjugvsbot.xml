@@ -59,7 +59,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline12"
         app:layout_constraintTop_toTopOf="@+id/guideline8"
         app:srcCompat="@drawable/circle"
-        android:contentDescription="@null" />
+        android:contentDescription="Boton o"/>
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -70,6 +70,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline11"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
         app:layout_constraintTop_toTopOf="@+id/guideline8"
-        app:srcCompat="@drawable/x" />
+        app:srcCompat="@drawable/x"
+        android:contentDescription="Boton x"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
