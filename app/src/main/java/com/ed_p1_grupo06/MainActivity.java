@@ -77,8 +77,13 @@ Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSel
 
         salajugvsbot.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.cafe));
         regresoSelc.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.cafe_oscuro));
-
+        salajugvsbot.setOnClickListener(v -> cargarSalajugvsbot());
         regresoSelc.setOnClickListener(v -> cargarMenuSeleccion());
+
+    }
+
+    private void cargarSalajugvsbot(){
+        setContentView(R.layout.salajugvsbot);
 
     }
 }
