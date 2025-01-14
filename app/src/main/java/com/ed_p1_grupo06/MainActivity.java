@@ -25,7 +25,6 @@ Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSel
         //Seccion menu_principal
         jugar = (Button) findViewById(R.id.ButtonJugar);
         salir = (Button) findViewById(R.id.ButtonSalir);
-        //Cambios colores
         jugar.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.brownish_gray));
         salir.setBackgroundTintList(ContextCompat.getColorStateList(this,R.color.brownish_gray));
 
@@ -45,6 +44,11 @@ Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSel
         botvsbot = (Button) findViewById(R.id.escenario3);
         volver = (Button) findViewById(R.id.escenario4);
 
+        jugvsbot.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.brownish_gray));
+        jugvsjug.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.brownish_gray));
+        botvsbot.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.brownish_gray));
+        volver.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.brownish_gray));
+
         jugvsbot.setOnClickListener(s -> cargarMenuEscogerJugVsBot());
         jugvsjug.setOnClickListener(s -> setContentView(R.layout.menu_escogerjugvsjug));
         botvsbot.setOnClickListener(s -> setContentView(R.layout.menu_escogerbotvsbot));
@@ -56,6 +60,7 @@ Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSel
         setContentView(R.layout.menu_principal);
         jugar = (Button) findViewById(R.id.ButtonJugar);
         salir = (Button) findViewById(R.id.ButtonSalir);
+
         jugar.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.brownish_gray));
         salir.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.brownish_gray));
 
@@ -70,10 +75,7 @@ Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSel
         salajugvsbot = (Button) findViewById(R.id.IngresoSala);
         regresoSelc = (Button) findViewById(R.id.RegresoSeleccion);
 
-        // Listener para ingresar a la sala del juego
-        salajugvsbot.setOnClickListener(u -> setContentView(R.layout.salajugvsbot));
+        regresoSelc.setOnClickListener(v -> cargarMenuSeleccion());
 
-        // Listener para regresar al menú de selección
-        regresoSelc.setOnClickListener(u -> cargarMenuSeleccion());
     }
 }
