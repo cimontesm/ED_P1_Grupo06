@@ -25,46 +25,55 @@ Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSel
         //Seccion menu_principal
         jugar = (Button) findViewById(R.id.ButtonJugar);
         salir = (Button) findViewById(R.id.ButtonSalir);
+        //Cambios colores
         jugar.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.brownish_gray));
         salir.setBackgroundTintList(ContextCompat.getColorStateList(this,R.color.brownish_gray));
-        jugar.setOnClickListener(v ->{
-            //Seccion menu_seleccion
-            setContentView(R.layout.menu_seleccion);
-            jugvsbot = (Button) findViewById(R.id.escenario1);
-            jugvsjug = (Button) findViewById(R.id.escenario2);
-            botvsbot = (Button) findViewById(R.id.escenario3);
-            volver = (Button) findViewById(R.id.escenario4);
 
-            //jugvsbot
-            jugvsbot.setOnClickListener(s ->{
-                setContentView(R.layout.menu_escogerjugvsbot);
-                //Ir a sala del juego
-                salajugvsbot = (Button) findViewById(R.id.IngresoSala);
-                salajugvsbot.setOnClickListener(u ->{
-                    setContentView(R.layout.salajugvsbot);
-                });
-                //Regreso al menú de selección
-                regresoSelc = (Button) findViewById(R.id.RegresoSeleccion);
-                regresoSelc.setOnClickListener(u ->{
-                    setContentView(R.layout.menu_seleccion);
-                });
-            });
-            //jugvsjug
-            jugvsjug.setOnClickListener(s ->{
-                setContentView(R.layout.menu_escogerjugvsjug);
-            });
-            //botvsbot
-            botvsbot.setOnClickListener(s ->{
-                setContentView(R.layout.menu_escogerbotvsbot);
-            });
-            //volver
-            volver.setOnClickListener(s ->{
-                setContentView(R.layout.menu_principal);
-            });
-        });
-        salir.setOnClickListener(v ->{
-            finishAffinity();
-        });
 
+        jugar.setOnClickListener(v -> cargarMenuSeleccion());
+
+        salir.setOnClickListener(v -> finishAffinity());
+
+
+    }
+
+    //Pantalla de carga
+    private void cargarMenuSeleccion(){
+        setContentView(R.layout.menu_seleccion);
+        jugvsbot = (Button) findViewById(R.id.escenario1);
+        jugvsjug = (Button) findViewById(R.id.escenario2);
+        botvsbot = (Button) findViewById(R.id.escenario3);
+        volver = (Button) findViewById(R.id.escenario4);
+
+        jugvsbot.setOnClickListener(s -> cargarMenuEscogerJugVsBot());
+        jugvsjug.setOnClickListener(s -> setContentView(R.layout.menu_escogerjugvsjug));
+        botvsbot.setOnClickListener(s -> setContentView(R.layout.menu_escogerbotvsbot));
+        volver.setOnClickListener(s -> cargarMenuPrincipal());
+    }
+
+    //Menu principal
+    private void cargarMenuPrincipal() {
+        setContentView(R.layout.menu_principal);
+        jugar = (Button) findViewById(R.id.ButtonJugar);
+        salir = (Button) findViewById(R.id.ButtonSalir);
+        jugar.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.brownish_gray));
+        salir.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.brownish_gray));
+
+        // Reasignar listeners
+        jugar.setOnClickListener(v -> cargarMenuSeleccion());
+        salir.setOnClickListener(v -> finishAffinity());
+    }
+
+    //Jugador vs Bot
+    private void cargarMenuEscogerJugVsBot() {
+        setContentView(R.layout.menu_escogerjugvsbot);
+        salajugvsbot = (Button) findViewById(R.id.IngresoSala);
+        regresoSelc = (Button) findViewById(R.id.RegresoSeleccion);
+
+        // Listener para ingresar a la sala del juego
+        salajugvsbot.setOnClickListener(u -> setContentView(R.layout.salajugvsbot));
+
+        // Listener para regresar al menú de selección
+        regresoSelc.setOnClickListener(u -> cargarMenuSeleccion());
     }
 }
