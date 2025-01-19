@@ -28,36 +28,63 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout style="@style/row">
-            <Button style="@style/column"
-                android:contentDescription="Boton vacio"/>
+
+            <Button
+                android:id="@+id/button_0_0"
+                style="@style/column"
+                android:contentDescription="Boton vacio" />
             <View style="@style/verticalLine" />
-            <Button style="@style/column"
-                android:contentDescription="Boton vacio"/>
+
+            <Button
+                android:id="@+id/button_0_1"
+                style="@style/column"
+                android:contentDescription="Boton vacio" />
             <View style="@style/verticalLine" />
-            <Button style="@style/column"
-                android:contentDescription="Boton vacio"/>
+
+            <Button
+                android:id="@+id/button_0_2"
+                style="@style/column"
+                android:contentDescription="Boton vacio" />
         </LinearLayout>
         <View style="@style/horizontalLine" />
         <LinearLayout style="@style/row">
-            <Button style="@style/column"
-                android:contentDescription="Boton vacio"/>
+
+            <Button
+                android:id="@+id/button_1_0"
+                style="@style/column"
+                android:contentDescription="Boton vacio" />
             <View style="@style/verticalLine" />
-            <Button style="@style/column"
-                android:contentDescription="Boton vacio"/>
+
+            <Button
+                android:id="@+id/button_1_1"
+                style="@style/column"
+                android:contentDescription="Boton vacio" />
             <View style="@style/verticalLine" />
-            <Button style="@style/column"
-                android:contentDescription="Boton vacio"/>
+
+            <Button
+                android:id="@+id/button_1_2"
+                style="@style/column"
+                android:contentDescription="Boton vacio" />
         </LinearLayout>
         <View style="@style/horizontalLine" />
         <LinearLayout style="@style/row">
-            <Button style="@style/column"
-                android:contentDescription="Boton vacio"/>
+
+            <Button
+                android:id="@+id/button_2_0"
+                style="@style/column"
+                android:contentDescription="Boton vacio" />
             <View style="@style/verticalLine" />
-            <Button style="@style/column"
-                android:contentDescription="Boton vacio"/>
+
+            <Button
+                android:id="@+id/button_2_1"
+                style="@style/column"
+                android:contentDescription="Boton vacio" />
             <View style="@style/verticalLine" />
-            <Button style="@style/column"
-                android:contentDescription="Boton vacio"/>
+
+            <Button
+                android:id="@+id/button_2_2"
+                style="@style/column"
+                android:contentDescription="Boton vacio" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
