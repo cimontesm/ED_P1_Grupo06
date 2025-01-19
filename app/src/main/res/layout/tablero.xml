@@ -9,8 +9,9 @@
         android:id="@+id/turnTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
         android:text="Turn X"
-        android:textColor="@color/black"
+        android:textColor="@color/blanco"
         android:textSize="40sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -33,53 +34,72 @@
                 android:id="@+id/button_0_0"
                 style="@style/column"
                 android:contentDescription="Boton vacio" />
-            <View style="@style/verticalLine" />
+
+            <View style="@style/verticalLine"
+                android:background="#FFFFFF" />
 
             <Button
                 android:id="@+id/button_0_1"
                 style="@style/column"
                 android:contentDescription="Boton vacio" />
-            <View style="@style/verticalLine" />
+
+            <View style="@style/verticalLine"
+                android:background="#FFFFFF" />
 
             <Button
                 android:id="@+id/button_0_2"
                 style="@style/column"
                 android:contentDescription="Boton vacio" />
         </LinearLayout>
-        <View style="@style/horizontalLine" />
+
+        <View style="@style/horizontalLine"
+            android:background="#FFFFFF" />
+
         <LinearLayout style="@style/row">
 
             <Button
                 android:id="@+id/button_1_0"
                 style="@style/column"
                 android:contentDescription="Boton vacio" />
-            <View style="@style/verticalLine" />
+
+            <View style="@style/verticalLine"
+                android:background="#FFFFFF" />
 
             <Button
                 android:id="@+id/button_1_1"
                 style="@style/column"
                 android:contentDescription="Boton vacio" />
-            <View style="@style/verticalLine" />
+
+            <View style="@style/verticalLine"
+                android:background="#FFFFFF" />
 
             <Button
                 android:id="@+id/button_1_2"
                 style="@style/column"
                 android:contentDescription="Boton vacio" />
         </LinearLayout>
-        <View style="@style/horizontalLine" />
+
+        <View style="@style/horizontalLine"
+            android:background="#FFFFFF" />
+
         <LinearLayout style="@style/row">
 
             <Button
                 android:id="@+id/button_2_0"
                 style="@style/column"
                 android:contentDescription="Boton vacio" />
-            <View style="@style/verticalLine" />
+
+            <View
+                style="@style/verticalLine"
+                android:background="#FFFFFF" />
 
             <Button
                 android:id="@+id/button_2_1"
                 style="@style/column"
                 android:contentDescription="Boton vacio" />
-            <View style="@style/verticalLine" />
+
+            <View style="@style/verticalLine"
+                android:background="#FFFFFF" />
 
             <Button
                 android:id="@+id/button_2_2"
