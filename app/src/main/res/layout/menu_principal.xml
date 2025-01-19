@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/background2"
     android:keepScreenOn="false"
     tools:context=".MainActivity">
 
@@ -23,49 +23,16 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="468dp" />
 
-    <Button
-        android:id="@+id/ButtonJugar"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="257dp"
-        android:layout_height="64dp"
-        android:fontFamily="casual"
-        android:lineSpacingExtra="8sp"
-        android:text="@string/jugar"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
-
-    <Button
-        android:id="@+id/ButtonSalir"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="261dp"
-        android:layout_height="60dp"
-        android:fontFamily="casual"
-        android:text="@string/salir"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.263" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="310dp"
-        android:layout_height="89dp"
-        android:fontFamily="casual"
+        android:layout_width="352dp"
+        android:layout_height="84dp"
+        android:fontFamily="@font/aclonica"
         android:text="@string/bienvenido_a_tres_en_raya_d"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textColor="@color/cafe_oscuro"
+        android:textColor="@color/blanco"
         android:textSize="34sp"
         android:textStyle="normal|bold"
         app:autoSizeTextType="uniform"
@@ -74,6 +41,39 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.706" />
+        app:layout_constraintVertical_bias="0.848" />
+
+    <Button
+        android:id="@+id/ButtonJugar"
+        android:layout_width="257dp"
+        android:layout_height="64dp"
+        android:backgroundTint="@color/morado"
+        android:fontFamily="casual"
+        android:text="@string/jugar"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.572" />
+
+    <Button
+        android:id="@+id/ButtonSalir"
+        android:layout_width="261dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/fucsia"
+        android:fontFamily="casual"
+        android:text="@string/salir"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.29" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

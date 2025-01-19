@@ -7,4 +7,10 @@
     <color name="cafe">#5B3E31</color>
     <color name="cafe_oscuro">#3D251E</color>
     <color name="cafe_claro">#8B6C5C</color>
+    <color name="fucsia">#B72264</color>
+    <color name="rosa">#F3A8D6</color>
+    <color name="morado">#6F2159</color>
+    <color name="naranja">#FF8D00</color>
+    <color name="amarillo_claro">#CDF564</color>
+    <color name="naranja_claro">#FBAF4C</color>
 </resources>

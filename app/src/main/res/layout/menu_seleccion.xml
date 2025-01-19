@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/background3">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -38,6 +38,7 @@
         android:id="@+id/escenario1"
         android:layout_width="245dp"
         android:layout_height="60dp"
+        android:backgroundTint="@color/morado"
         android:fontFamily="casual"
         android:text="Jugador vs Bot"
         android:textAlignment="center"
@@ -52,6 +53,7 @@
         android:id="@+id/escenario2"
         android:layout_width="245dp"
         android:layout_height="60dp"
+        android:backgroundTint="@color/morado"
         android:fontFamily="casual"
         android:text="Jugador vs Jugador"
         android:textSize="20sp"
@@ -60,12 +62,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:layout_constraintVertical_bias="0.293" />
+        app:layout_constraintVertical_bias="0.675" />
 
     <Button
         android:id="@+id/escenario3"
         android:layout_width="245dp"
         android:layout_height="60dp"
+        android:backgroundTint="@color/morado"
         android:fontFamily="casual"
         android:text="Bot vs Bot"
         android:textAlignment="center"
@@ -76,12 +79,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline5"
-        app:layout_constraintVertical_bias="0.312" />
+        app:layout_constraintVertical_bias="0.543" />
 
     <Button
         android:id="@+id/escenario4"
         android:layout_width="143dp"
         android:layout_height="51dp"
+        android:backgroundTint="@color/fucsia"
         android:fontFamily="casual"
         android:text="Volver"
         android:textAlignment="center"
@@ -92,24 +96,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
-        app:layout_constraintVertical_bias="0.254" />
+        app:layout_constraintVertical_bias="0.184" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="302dp"
-        android:layout_height="50dp"
-        android:fontFamily="casual"
-        android:text="Menú de selección"
+        android:layout_width="357dp"
+        android:layout_height="51dp"
+        android:fontFamily="@font/aclonica"
+        android:text="Selecciona el modo"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="@color/cafe_oscuro"
+        android:textColor="@color/blanco"
         android:textSize="34sp"
         android:textStyle="bold"
+        android:typeface="sans"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.833" />
+        app:layout_constraintVertical_bias="0.852" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/background4">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline8"
@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.13" />
+        app:layout_constraintGuide_end="636dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline15"
@@ -52,23 +52,25 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="casual"
+        android:fontFamily="@font/aclonica"
         android:text="Escoga una ficha"
         android:textAlignment="center"
-        android:textColor="@color/cafe_oscuro"
-        android:textSize="28sp"
+        android:textColor="@color/blanco"
+        android:textSize="34sp"
         android:textStyle="bold"
         android:typeface="normal"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toStartOf="@+id/guideline13"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
         app:layout_constraintTop_toTopOf="@+id/guideline14"
-        app:layout_constraintVertical_bias="0.204" />
+        app:layout_constraintVertical_bias="0.676" />
 
     <Button
         android:id="@+id/IngresoSala3"
         android:layout_width="150dp"
         android:layout_height="50dp"
+        android:backgroundTint="@color/morado"
         android:fontFamily="casual"
         android:text="Empezar"
         android:textAlignment="center"
@@ -79,12 +81,13 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
         app:layout_constraintTop_toTopOf="@+id/guideline15"
-        app:layout_constraintVertical_bias="0.65" />
+        app:layout_constraintVertical_bias="0.6" />
 
     <Button
         android:id="@+id/RegresoSeleccion3"
         android:layout_width="120dp"
         android:layout_height="50dp"
+        android:backgroundTint="@color/fucsia"
         android:fontFamily="casual"
         android:text="Volver"
         android:textAlignment="center"
@@ -92,39 +95,69 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline13"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
         app:layout_constraintTop_toTopOf="@+id/guideline16"
-        app:layout_constraintVertical_bias="0.491" />
+        app:layout_constraintVertical_bias="0.22" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="113dp"
-        android:layout_height="107dp"
+        android:layout_width="150dp"
+        android:layout_height="127dp"
+        android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline15"
-        app:layout_constraintEnd_toStartOf="@+id/guideline13"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toTopOf="@+id/guideline9"
-        app:layout_constraintVertical_bias="0.377"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline8"
+        app:layout_constraintVertical_bias="0.72"
         app:srcCompat="@drawable/x" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.48153216" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="122dp"
-        android:layout_height="109dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline9"
-        app:layout_constraintEnd_toStartOf="@+id/guideline13"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        android:layout_width="163dp"
+        android:layout_height="135dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.404"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="@+id/guideline8"
-        app:layout_constraintVertical_bias="0.507"
+        app:layout_constraintVertical_bias="0.462"
         app:srcCompat="@drawable/circle" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6087551" />
+
+    <RadioGroup
+        android:layout_width="233dp"
+        android:layout_height="63dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/guideline15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline23">
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="60dp"
+            android:layout_height="55dp"
+            android:layout_marginEnd="140dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="80dp"
+            android:layout_height="55dp" />
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
