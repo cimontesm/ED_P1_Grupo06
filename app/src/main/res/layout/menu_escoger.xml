@@ -139,6 +139,7 @@
         app:layout_constraintGuide_percent="0.6087551" />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="233dp"
         android:layout_height="63dp"
         android:orientation="horizontal"
