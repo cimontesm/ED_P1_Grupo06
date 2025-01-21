@@ -12,8 +12,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import java.util.concurrent.atomic.AtomicReference;
-
 public class MainActivity extends AppCompatActivity {
     Button jugar, salir, jugvsbot, jugvsjug, botvsbot,volver,salajugvsbot,regresoSelc, salajugvsjug, regresoSelc2, salabotvsbot, regresoSelec3;
     String modoDeJuego;
@@ -142,11 +140,93 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void jugarJugadorVsBot() {
+        Tablero tablero = new Tablero();
+        final Ficha.TipoFicha[] turnoActual = {jugador1.getFicha()};
 
+        // Inicializa los botones del tablero y configura los eventos de clic
+        for (int fila = 0; fila < 3; fila++) {
+            for (int columna = 0; columna < 3; columna++) {
+                int finalFila = fila, finalColumna = columna;
+                Button boton = findViewById(getResources().getIdentifier(
+                        "button_" + fila + "_" + columna, "id", getPackageName()
+                ));
+
+                boton.setOnClickListener(v -> {
+                    if (turnoActual[0] == jugador1.getFicha()) {
+                        // Movimiento del jugador
+                        if (tablero.colocarFicha(finalFila, finalColumna, jugador1.getFicha())) {
+                            boton.setText(jugador1.getFicha() == Ficha.TipoFicha.CRUZ ? "X" : "O");
+
+                            if (tablero.verificarGanador(jugador1.getFicha())) {
+                                Toast.makeText(this, "¡Ganaste!", Toast.LENGTH_SHORT).show();
+                                return;
+                            } else if (tablero.estaLleno()) {
+                                Toast.makeText(this, "Empate", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+
+                            // Cambiar turno al bot con un retraso
+                            turnoActual[0] = bot1.getFicha();
+                            new android.os.Handler().postDelayed(() -> realizarMovimientoBot(tablero, turnoActual), 5000); // Retraso de 5 segundos
+                        }
+                    }
+                });
+            }
+        }
+    }
+
+    private void realizarMovimientoBot(Tablero tablero, Ficha.TipoFicha[] turnoActual) {
+
+        Arbol<Tablero> arbol = new Arbol<>(tablero);
+
+        // Mejor movimiento considerando bloqueo de jugador
+        Tablero mejorEstado = null;
+        int mejorUtilidad = Integer.MIN_VALUE;
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                Tablero copia = tablero.copiar();
+                if (copia.colocarFicha(i, j, bot1.getFicha())) {
+                    if (copia.verificarGanador(bot1.getFicha())) {
+                        actualizarTablero(tablero, copia);
+                        Toast.makeText(this, "¡El bot ganó!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    // Bloqueo de movimientos ganadores del jugador
+                    Tablero copiaBloqueo = tablero.copiar();
+                    if (copiaBloqueo.colocarFicha(i, j, jugador1.getFicha()) && copiaBloqueo.verificarGanador(jugador1.getFicha())) {
+                        mejorEstado = copia;
+                    } else {
+                        Tablero posibleEstado = arbol.obtenerMejorMovimiento(tablero, bot1.getFicha());
+                        int utilidad = posibleEstado.calcularUtilidad(bot1.getFicha());
+                        if (utilidad > mejorUtilidad) {
+                            mejorUtilidad = utilidad;
+                            mejorEstado = posibleEstado;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (mejorEstado != null) {
+            actualizarTablero(tablero, mejorEstado);
+        }
+
+        if (tablero.verificarGanador(bot1.getFicha())) {
+            Toast.makeText(this, "¡El bot ganó!", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (tablero.estaLleno()) {
+            Toast.makeText(this, "Empate", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Cambiar turno de vuelta al jugador
+        turnoActual[0] = jugador1.getFicha();
     }
 
     private void jugarBotVsBot() {
-
+        //Implementar Logica
     }
 
     private void jugarJugadorVsJugador() {
@@ -179,18 +259,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+
     private void actualizarTablero(Tablero actual, Tablero nuevo) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (actual.getCasillas()[i][j].getTipo() != nuevo.getCasillas()[i][j].getTipo()) {
                     actual.colocarFicha(i, j, nuevo.getCasillas()[i][j].getTipo());
                     int finalI = i, finalJ = j;
-                    int finalI1 = i, finalJ1 = j;
                     runOnUiThread(() -> {
                         Button boton = findViewById(getResources().getIdentifier(
                                 "button_" + finalI + "_" + finalJ, "id", getPackageName()
                         ));
-                        boton.setText(nuevo.getCasillas()[finalI1][finalJ1].getTipo() == Ficha.TipoFicha.CRUZ ? "X" : "O");
+                        boton.setText(nuevo.getCasillas()[finalI][finalJ].getTipo() == Ficha.TipoFicha.CRUZ ? "X" : "O");
                     });
                 }
             }
