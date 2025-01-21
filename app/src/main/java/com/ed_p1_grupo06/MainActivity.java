@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import android.util.Log;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -41,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.menu_seleccion);
         jugvsbot = (Button) findViewById(R.id.escenario1);
         jugvsjug = (Button) findViewById(R.id.escenario2);
-        botvsbot = (Button) findViewById(R.id.escenario3);
         volver = (Button) findViewById(R.id.escenario4);
 
         jugvsbot.setOnClickListener(s -> {
@@ -50,10 +51,6 @@ public class MainActivity extends AppCompatActivity {
         });
         jugvsjug.setOnClickListener(s -> {
             modoDeJuego = "Jugador vs Jugador";
-            cargarMenuEscoger();
-        });
-        botvsbot.setOnClickListener(s -> {
-            modoDeJuego = "Bot vs Bot";
             cargarMenuEscoger();
         });
         volver.setOnClickListener(s -> cargarMenuPrincipal());
@@ -133,9 +130,6 @@ public class MainActivity extends AppCompatActivity {
                 jugarJugadorVsJugador();
                 break;
 
-            case "Bot vs Bot":
-                jugarBotVsBot();
-                break;
         }
     }
 
@@ -155,7 +149,9 @@ public class MainActivity extends AppCompatActivity {
                     if (turnoActual[0] == jugador1.getFicha()) {
                         // Movimiento del jugador
                         if (tablero.colocarFicha(finalFila, finalColumna, jugador1.getFicha())) {
-                            boton.setText(jugador1.getFicha() == Ficha.TipoFicha.CRUZ ? "X" : "O");
+                            boton.setBackgroundResource(
+                                    jugador1.getFicha() == Ficha.TipoFicha.CRUZ ? R.drawable.x : R.drawable.circle
+                            );
 
                             if (tablero.verificarGanador(jugador1.getFicha())) {
                                 Toast.makeText(this, "¡Ganaste!", Toast.LENGTH_SHORT).show();
@@ -167,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
 
                             // Cambiar turno al bot con un retraso
                             turnoActual[0] = bot1.getFicha();
-                            new android.os.Handler().postDelayed(() -> realizarMovimientoBot(tablero, turnoActual), 5000); // Retraso de 5 segundos
+                            new android.os.Handler().postDelayed(() -> realizarMovimientoBot1(tablero, turnoActual), 2000); // Retraso de 5 segundos
                         }
                     }
                 });
@@ -175,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void realizarMovimientoBot(Tablero tablero, Ficha.TipoFicha[] turnoActual) {
+    private void realizarMovimientoBot1(Tablero tablero, Ficha.TipoFicha[] turnoActual) {
 
         Arbol<Tablero> arbol = new Arbol<>(tablero);
 
@@ -225,9 +221,6 @@ public class MainActivity extends AppCompatActivity {
         turnoActual[0] = jugador1.getFicha();
     }
 
-    private void jugarBotVsBot() {
-        //Implementar Logica
-    }
 
     private void jugarJugadorVsJugador() {
         Tablero tablero = new Tablero();
@@ -242,7 +235,9 @@ public class MainActivity extends AppCompatActivity {
 
                 boton.setOnClickListener(v -> {
                     if (tablero.colocarFicha(finalFila, finalColumna, turnoActual[0])) {
-                        boton.setText(turnoActual[0] == Ficha.TipoFicha.CRUZ ? "X" : "O");
+                        boton.setBackgroundResource(
+                                turnoActual[0] == Ficha.TipoFicha.CRUZ ? R.drawable.x : R.drawable.circle
+                        );
 
                         if (tablero.verificarGanador(turnoActual[0])) {
                             Toast.makeText(this, "¡" + (turnoActual[0] == jugador1.getFicha() ? "Jugador 1" : "Jugador 2") + " gana!", Toast.LENGTH_SHORT).show();
@@ -271,7 +266,10 @@ public class MainActivity extends AppCompatActivity {
                         Button boton = findViewById(getResources().getIdentifier(
                                 "button_" + finalI + "_" + finalJ, "id", getPackageName()
                         ));
-                        boton.setText(nuevo.getCasillas()[finalI][finalJ].getTipo() == Ficha.TipoFicha.CRUZ ? "X" : "O");
+                        boton.setBackgroundResource(
+                                nuevo.getCasillas()[finalI][finalJ].getTipo() == Ficha.TipoFicha.CRUZ ? R.drawable.x : R.drawable.circle
+                        );
+
                     });
                 }
             }
